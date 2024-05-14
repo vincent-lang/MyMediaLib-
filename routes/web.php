@@ -9,6 +9,6 @@ Route::get('/', function () {
 
 Route::get('/photo', [PhotoController::class, 'index'])->name('photo.index');
 
-
+Route::post('/photo', [PhotoController::class, 'index'])->name('photo.index');
 
 Route::delete('/photo/delete/{photo}', [PhotoController::class, 'delete'])->name('photo.delete');
