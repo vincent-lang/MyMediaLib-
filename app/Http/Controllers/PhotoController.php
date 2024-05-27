@@ -21,23 +21,23 @@ class PhotoController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'data' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Try to upload image
         try {
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
+            $imageName = time() . '.' . $request->data->extension();
+            $request->data->move(public_path('images'), $imageName);
 
             // Save image to database
             $product = new Photo();
             $product->name = $request->name;
             $product->description = $request->description;
-            $product->image = 'images/' . $imageName;
+            $product->data = 'images/' . $imageName;
             $product->save();
 
             // If succesfull upload, return to upload page with success message
-            return redirect()->route('photos.upload')->with('success', 'Photo uploaded successfully.');
+            return redirect()->route('photo.index')->with('success', 'Photo uploaded successfully.');
         } catch (\Exception $e) {
             // If upload unsuccesfull, return to upload page with error
             return redirect()->route('photos.upload')->with('error', 'Photo upload failed. Please try again.');

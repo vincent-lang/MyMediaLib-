@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('data')->charset('binary');
+            $table->string('name');
             $table->string('description');
+            $table->string('data')->nullable();
             $table->timestamps();
         });
     }

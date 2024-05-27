@@ -30,7 +30,7 @@
         <label for="description">Description:</label>
         <textarea name="description" id="description"></textarea>
         <label for="image">Image:</label>
-        <input type="file" name="image" id="image">
+        <input type="file" name="data" id="image">
         <button type="submit">Submit</button>
     </form>
 </body>

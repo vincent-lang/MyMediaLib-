@@ -916,8 +916,8 @@
                 </header>
                 <main>
                     <section class="grid grid-cols-2">
-                        <a href="{{route('photo.index')}}">user story 5</a>
-                        <a href="#">user story 6</a>
+                        <a href="{{route('photo.index')}}">read and delete</a>
+                        <a href="{{route('photos.upload')}}">create</a>
                     </section>
                 </main>
             </div>
