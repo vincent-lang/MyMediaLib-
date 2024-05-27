@@ -3,6 +3,7 @@
     --red: rgba(255,0,0,1);
     --black: rgba(0,0,0,1);
     --white: rgba(255,255,255,1);
+    --darkgrey: rgb(42, 42, 42);
 }
 
 body {
@@ -19,7 +20,10 @@ section.container {
     align-items: center;
     margin-bottom: 1rem;
     width: 25%;
+    padding: 0.5rem;
+    padding-bottom: 1rem;
     color: var(--white);
+    background-color: var(--darkgrey);
 }
 
 section.container>div {
